@@ -13,6 +13,17 @@
   "scripts": {
     "test": "mocha && eslint lib/ test/"
   },
+  "config": {
+    "blanket": {
+      "pattern": [
+        ""
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
+    }
+  },
   "keywords": [
     "Finite",
     "state",
@@ -24,7 +35,10 @@
   "author": "Bharat Mhaskar <bmhaskar@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "blanket": "^1.2.2",
+    "coveralls": "^2.11.6",
     "eslint": "^2.1.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "mocha-lcov-reporter": "^1.1.0"
   }
 }
