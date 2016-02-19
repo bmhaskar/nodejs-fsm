@@ -1,0 +1,30 @@
+{
+  "name": "just-another-fsm",
+  "version": "0.0.1",
+  "description": "This is a simple configuration based finite state machine core.",
+  "main": "lib/fsm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmhaskar/nodejs-fsm"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha && eslint lib/ test/"
+  },
+  "keywords": [
+    "Finite",
+    "state",
+    "machine",
+    "simple",
+    "core",
+    "configuration-based"
+  ],
+  "author": "Bharat Mhaskar <bmhaskar@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.1.0",
+    "mocha": "^2.4.5"
+  }
+}
