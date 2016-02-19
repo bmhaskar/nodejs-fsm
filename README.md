@@ -1,6 +1,6 @@
 # nodejs-fsm
 
-[![Build Status](https://travis-ci.org/bmhaskar/nodejs-fsm.svg)](https://travis-ci.org/bmhaskar/nodejs-fsm)]
+[![Build Status](https://travis-ci.org/bmhaskar/nodejs-fsm.svg)](https://travis-ci.org/bmhaskar/nodejs-fsm)
 [![Test coverage][coveralls-image]][coveralls-url]
 
 Finite state machine module for NodeJs.
