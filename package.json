@@ -1,6 +1,6 @@
 {
   "name": "just-another-fsm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple configuration based finite state machine core.",
   "main": "lib/fsm.js",
   "repository": {
