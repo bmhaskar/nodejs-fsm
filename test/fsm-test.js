@@ -133,4 +133,45 @@ describe("fsmTest", function () {
             " myMachine1.getNextPossibleTransitions()");
 
     });
+    
+    it("It should call callback function before applying transition", function (done) {
+        const myBook1 = {
+            name: "My dummy book Object",
+            author: "Dummy Author",
+            pblisher: "Dummy Publisher"
+        };
+        const myBook = {
+            name: "My dummy book Object",
+            author: "Dummy Author",
+            pblisher: "Dummy Publisher"
+        };
+
+        let myMachine1 = fsm(config, myBook1, "simple");
+        myMachine1.apply("send_request", (obj, currentState, toState) =>  {
+            assert.equal(currentState,"initial");
+            assert.equal(toState,"requested");
+            done();
+        });
+    });
+
+    it("It should call callback function after applying transition", function (done) {
+        const myBook1 = {
+            name: "My dummy book Object",
+            author: "Dummy Author",
+            pblisher: "Dummy Publisher"
+        };
+        const myBook = {
+            name: "My dummy book Object",
+            author: "Dummy Author",
+            pblisher: "Dummy Publisher"
+        };
+
+        let myMachine1 = fsm(config, myBook1, "simple");
+        myMachine1.apply("send_request");
+        myMachine1.apply("approve_request",null ,(obj, currentState, previousState) =>  {
+            assert.equal(currentState,"lent");
+            assert.equal(previousState,"requested");
+            done();
+        });
+    })
 });

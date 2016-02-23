@@ -11,18 +11,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha && eslint lib/ test/"
-  },
-  "config": {
-    "blanket": {
-      "pattern": [
-        ""
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
-      ]
-    }
+    "test": "mocha && eslint lib/ test/",
+    "coveralls": " node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "keywords": [
     "Finite",
@@ -35,9 +25,9 @@
   "author": "Bharat Mhaskar <bmhaskar@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "blanket": "^1.2.2",
     "coveralls": "^2.11.6",
     "eslint": "^2.1.0",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "mocha-lcov-reporter": "^1.1.0"
   }
