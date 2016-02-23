@@ -149,6 +149,7 @@ describe("fsmTest", function () {
         let myMachine1 = fsm(config, myBook1, "simple");
         myMachine1.apply("send_request", (obj, currentState, toState) =>  {
             assert.equal(currentState,"initial");
+            assert.deepStrictEqual(obj, myBook);
             assert.equal(toState,"requested");
             done();
         });
