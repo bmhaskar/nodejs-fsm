@@ -170,8 +170,9 @@ describe("fsmTest", function () {
         myMachine1.apply("send_request");
         myMachine1.apply("approve_request",null ,(obj, currentState, previousState) =>  {
             assert.equal(currentState,"lent");
+            assert.deepStrictEqual(obj, myBook);
             assert.equal(previousState,"requested");
             done();
         });
-    })
+    });
 });
